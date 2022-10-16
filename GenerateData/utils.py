@@ -58,7 +58,7 @@ def create_directories() -> None:
 
 def copy_old_data():
     """
-    Copy old data to Old_Data folder.
+    Copy old data from input directory to Old_Data folder.
     """
     root = Tk()
     old_data_original_directory = filedialog.askdirectory(title="Select BestDeck directory")
@@ -79,4 +79,6 @@ def copy_old_data():
                 print(e)
                 print("Could not copy file: " + file)
 
-    print("Copied files")
+        print("Copied files")
+    else:
+        print("No files copied")
