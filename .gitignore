@@ -1,0 +1,50 @@
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Dev
+.mr.developer.cfg
+.project
+.pydevproject
+.idea
+
+# ELorans
+Old/
+
+# ipynb
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.secret
+
+# Scryfall_Data (too big)
+all-cards.json
