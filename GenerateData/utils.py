@@ -35,7 +35,7 @@ def is_mtga_legal(card_dictionary: dict[str, str],
     return False
 
 
-def save_card_to_dict(card_name: str, card_value: float, dictionary: dict[str, float]) -> None:
+def save_card_to_dict(card_name: str, card_value: float, dictionary: dict[str, str | float]) -> None:
     """
     Call 'dictionary[card_name] = card_value' and handle double-faced cards.
     """
