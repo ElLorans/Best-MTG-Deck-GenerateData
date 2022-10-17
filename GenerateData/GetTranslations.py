@@ -24,7 +24,7 @@ errors = list()  # no italian name provided
 translations = dict()
 # this will take time (384418 it [11:20, 564.85it/s] for 1.5 GB)
 with open(os.path.join(SCRYFALL_FOLDER, "all-cards.json"), "rb") as j:
-    for dictionary in tqdm(ijson.items(j, "item.lang.it")):
+    for dictionary in tqdm(ijson.items(j, "item")):
         if dictionary["lang"] == "en":
             lower_name = dictionary["name"].lower()
             # if card has 2 sides
