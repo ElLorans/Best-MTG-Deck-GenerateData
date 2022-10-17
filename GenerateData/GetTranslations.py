@@ -6,10 +6,9 @@ import os
 import ijson
 from tqdm.auto import tqdm
 
-from utils import NEW_DATA_FOLDER, SCRYFALL_FOLDER, create_directories, copy_old_data
+from utils import NEW_DATA_FOLDER, SCRYFALL_FOLDER, create_directories
 
 create_directories()
-copy_old_data()
 
 
 def clean_str(stringa: str) -> str:
