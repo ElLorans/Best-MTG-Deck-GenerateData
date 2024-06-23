@@ -4,7 +4,7 @@
 
 # Issue: Prices are the price of the latest card version
 # (if latest version is only digital, None prices)
-# DatUpdater will save previous price from Old_Data, if present
+# DataUpdater will save previous price from Old_Data, if present
 
 import os
 import traceback
