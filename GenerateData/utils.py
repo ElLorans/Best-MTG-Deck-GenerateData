@@ -25,7 +25,7 @@ FOLDERS = (SCRYFALL_FOLDER, NEW_DATA_FOLDER, OLD_DATA_FOLDER, RESULT_FOLDER)
 
 
 def is_mtga_legal(card_dictionary: dict[str, str],
-                  formats: frozenset = frozenset({"standard", "historic", "brawl"})) -> bool:
+                  formats: frozenset = frozenset({"standard", "historic", "brawl", "timeless"})) -> bool:
     """
     Return True if card is legal in either (standard, historic, brawl).
     """
