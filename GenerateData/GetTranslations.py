@@ -8,7 +8,6 @@ import orjson
 from tqdm.auto import tqdm
 
 from utils import NEW_DATA_FOLDER, SCRYFALL_FOLDER, create_directories
-# from Old_Data.translations import translations as old_translations
 
 create_directories()
 
@@ -19,9 +18,6 @@ def clean_str(stringa: str) -> str:
     return stringa
 
 
-# card_types = dict()
-
-# errors = list()  # no italian name provided
 translations = dict()
 
 print("Reading file... It will take up to 30 minutes")
@@ -30,8 +26,6 @@ with open(os.path.join(SCRYFALL_FOLDER, "all-cards.json"), "rb") as f:
     data = orjson.loads(f.read())
 print("Database loaded in", time.time() - start)
 
-# this will take time (384418 it [11:20, 564.85it/s] for 1.5 GB)
-# 395977it [50:52, 129.71it/s]
 for dictionary in tqdm(data):
     if dictionary["lang"] == "it":
         try:
@@ -54,11 +48,7 @@ for dictionary in tqdm(data):
                         break
                 ita_name = " // ".join(ita_name)
                 translations[ita_name] = dictionary["name"].lower()
-            # else:
-            #     errors.append(dictionary["name"])
 
-# errors = set(errors)
-# print(f"{len(errors)} errors:\n{errors}")
 
 try:
     print(translations["trovare // troncare"])
