@@ -7,7 +7,6 @@
 # DataUpdater will save previous price from Old_Data, if present
 
 import os
-import traceback
 
 import ujson as json
 from tqdm.auto import tqdm
@@ -83,16 +82,16 @@ for k, v in corrections.items():
         card_types[k] = v
         print(k, "Corrected")
 
-print(card_types["liliana of the veil"])
-print(card_types["lorehold command"])
+print("Chack Liliana is a PlanesWalker:", card_types["liliana of the veil"] == "Legendary Planeswalker")
+print("Check Lorehold Command is an instant:", card_types["lorehold command"] == "Instant")
 
 # Save Card Types
-
 with open(
         os.path.join(NEW_DATA_FOLDER, "new_card_types.py"), "w", encoding="utf-8"
 ) as f:
     f.write("cards_to_types = " + str(card_types))
 
+print("Sanity Check:")
 for card, dictionary in (("liliana of the veil: €", eur_prices),
                          ("black lotus: tix", mtgo_prices),
                          ("urza's saga: €", eur_prices),
@@ -103,7 +102,7 @@ for card, dictionary in (("liliana of the veil: €", eur_prices),
     try:
         print(card, dictionary[card.split(":")[0]])
     except KeyError:
-        print(traceback.format_exc())
+        print(f"Missing {card.split(":")[0]}")
 
 # Save Prices
 
