@@ -61,6 +61,7 @@ def copy_old_data():
     Copy old data from input directory to Old_Data folder.
     """
     root = Tk()
+    root.withdraw()
     old_data_original_directory = filedialog.askdirectory(title="Select BestDeck directory")
     root.destroy()
 
