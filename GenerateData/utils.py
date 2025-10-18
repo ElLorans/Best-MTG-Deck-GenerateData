@@ -41,7 +41,7 @@ def save_card_to_dict(card_name: str, card_value: float, dictionary: dict[str, s
     """
     dictionary[card_name.split(" /")[0]] = card_value
     # if card is a double faced card, add type also for both parts too
-    if "//" in card_name:
+    if " // " in card_name:
         dictionary[card_name.split(" // ")[1]] = card_value
     elif " /" in card_name:
         dictionary[card_name.split(" / ")[1]] = card_value
